@@ -18,7 +18,9 @@ class User < ActiveRecord::Base
   #       with: /a-zA-Z0-9/,
   #       message: 'Must be formated correctly.'
   #    }
-
+  def show_contact
+    first_name + " " + last_name + " " + email + " " + phone_number.to_s +  twitter_handle + preferred_contact
+  end
 
 
   def full_name

@@ -17,7 +17,7 @@ class StatusesController < ApplicationController
   end
 
   # def first_name
-  #   @status.first_name 
+  #   @status.first_name
   # end
 
   # GET /statuses/new
@@ -81,6 +81,6 @@ class StatusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
- params.require(:status).permit( :user, :user_id, :content, :first_name, :last_name, :profile, user_attributes: [:first_name])
+ params.require(:status).permit( :user, :phone_number, :twitter_handle, :preferred_contact ,:user_id, :content, :first_name, :last_name, :profile, user_attributes: [:first_name])
     end
 end

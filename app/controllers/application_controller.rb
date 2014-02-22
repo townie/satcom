@@ -3,9 +3,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  before_filter :authenticate_user!, unless: :devise_controller?
+
+
+
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:first_name, :last_name, :profile, :email, :password, :password_confirmation)}
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:first_name, :phone_number, :twitter_handle, :preferred_contact, :last_name, :profile, :email, :password, :password_confirmation)}
   end
 end

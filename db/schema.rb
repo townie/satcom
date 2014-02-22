@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209180908) do
+ActiveRecord::Schema.define(version: 20140222000855) do
 
   create_table "statuses", force: true do |t|
     t.text     "content"
@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 20140209180908) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "phone_number"
+    t.string   "twitter_handle"
+    t.string   "preferred_contact"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

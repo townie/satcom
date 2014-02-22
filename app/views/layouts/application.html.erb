@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Treebook</title>
+  <title>SatCom</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -10,10 +10,10 @@
 
 	<div class="navbar navbar-inverse navbar-fixed-top " role="navigation">
 			<div class= "container">
-				<a class="navbar-brand">Treebook</a>
+				<a class="navbar-brand">SatCom</a>
 					<ul class="nav navbar-nav navbar-left">
 						<li><%= link_to "All statuses", statuses_path %></li>
-						
+						<li><%= link_to "All users", users_path %></li>
 					</ul>
 
 				<ul class = "nav navbar-nav navbar-right">
@@ -24,9 +24,9 @@
 						<li> <%= link_to "Register", new_user_registration_path %></li>
 						<li> <%= link_to "Log In", new_user_session_path %></li>
 					<% end %>
-				</ul> 
+				</ul>
 			</div>
-	</div>	
+	</div>
 
 	<div class="container" id="bodytag">
 	<% flash.each do |type, message| %>
@@ -36,10 +36,10 @@
 		</div>
 	<% end %>
 
-	
+
 
 		<%= yield %>
-		
+
 	</div>
 </body>
 </html>
