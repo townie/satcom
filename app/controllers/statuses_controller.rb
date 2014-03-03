@@ -1,5 +1,6 @@
 class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :edit, :update, :destroy]
+  before_action :can_change, only: [:edit, :update, :destory]
 
   # def full_name
   #   name= first_name + ' ' + last_name
@@ -33,6 +34,7 @@ class StatusesController < ApplicationController
   # POST /statuses.json
   def create
     @status = Status.new(status_params)
+    @status.user = current_user
 
     respond_to do |format|
       if @status.save
@@ -75,12 +77,14 @@ class StatusesController < ApplicationController
       @status = Status.find(params[:id])
     end
 
-    def set_user
-      @status.user = User.find_by(@status.user_id)
+    def can_change
+      if @status.user != current_user
+        redirect_to @status
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
- params.require(:status).permit( :user, :phone_number, :twitter_handle, :preferred_contact ,:user_id, :content, :first_name, :last_name, :profile, user_attributes: [:first_name])
+      params.require(:status).permit( :user, :content)
     end
 end

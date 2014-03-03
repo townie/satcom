@@ -9,6 +9,8 @@
 </th>
 <th> Email
 </th>
+<th> twitter
+</th>
 </tr>
 </thead>
 <% @users.each do |user| %>
@@ -25,6 +27,9 @@
 
   <td>
     <%= user.email %>
+  </td>
+    <td>
+    <%= user.twitter_handle %>
   </td>
 
 </tbody>
