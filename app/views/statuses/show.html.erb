@@ -1,3 +1,5 @@
+<div class= "row">
+<div class= "col-md-10">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,9 +8,15 @@
   </p>
 
 <p>
-  <strong>Content:</strong> 
+  <strong>Content:</strong>
  <%= @status.content %>
 </p>
 
 <%= link_to 'Edit', edit_status_path(@status) %> |
 <%= link_to 'Back', statuses_path %>
+
+</div>
+<div class= "col-md-2">
+<span style="display: block !important; width: 320px; text-align: center; font-family: sans-serif; font-size: 12px;"><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:02101.1.99999&bannertypeclick=wu_clean2day" title="Boston, Massachusetts Weather Forecast" target="_blank"><img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_clean2day_cond&airportcode=KBOS&ForcedCity=Boston&ForcedState=MA&zip=02101&language=EN" alt="Find more about Weather in Boston, MA" width="300" /></a><br><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:02101.1.99999&bannertypeclick=wu_clean2day" title="Get latest Weather Forecast updates" style="font-family: sans-serif; font-size: 12px" target="_blank">Click for weather forecast</a></span>
+</div>
+</div>
