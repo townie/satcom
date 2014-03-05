@@ -8,7 +8,9 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+  <div><%= f.input :twitter_handle %></div>
+  <div><%= f.input :phone_number %></div>
+  <div><%= f.input :preferred_contact %></div>
   <div><%= f.input :password %> <i>(leave blank if you don't want to change it)</i></div>
 
   <div><%= f.input :password_confirmation %></div>
