@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   #                 :first_name, :last_name, :profile, :remember_me
 
 
-  has_many :statuses
+  has_many :statuses,
+    dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

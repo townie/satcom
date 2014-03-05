@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 # def set_current_user
 #       @user = current_user
 # end
+
+ before_action :authenticate_user!
+
 def index
     @users = User.all
 end

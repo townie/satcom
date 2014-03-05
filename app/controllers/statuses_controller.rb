@@ -1,6 +1,7 @@
 class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :edit, :update, :destroy]
   before_action :can_change, only: [:edit, :update, :destory]
+  before_action :authenticate_user!
 
   # def full_name
   #   name= first_name + ' ' + last_name
